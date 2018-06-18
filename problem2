@@ -1,0 +1,79 @@
+#pass those tests 
+
+def test_create_list():
+    assert create_list() == ['A', 'B', 'C']
+
+def test_select_first_item():
+    assert select_first_item() == 'A'
+
+def test_select_last_item():
+    assert select_last_item() == 'C'
+    
+def test_select_reversed():
+    assert select_reversed() == ['C', 'B', 'A']
+    
+def test_select_first_items():
+    assert select_first_items() == ['A','B','C']
+    
+def test_add_5_to_values():
+    assert add_5_to_values() == [6, 15, 25]
+    
+def test_get_divisble_by_5():
+    assert get_divisble_by_5() == [10, 15, 15, 25, 50]
+    
+def test_merge_lists():
+    assert merge_lists() == [('A', 'x'), ('B', 'y'), ('C', 'z')]
+
+def test_transpose():
+    data = [
+        [1, 2, 3],
+        ['A', 'B', 'C'],
+    ]
+    expected = [
+        [1, 'A'],
+        [2, 'B'],
+        [3, 'C'],
+    ]
+    assert transpose(data) == expected
+
+def test_transpose_non_equal_length():
+    data = [
+        [1, 2, 3],
+        ['A', 'B'],
+    ]
+    expected = [
+        [1, 'A'],
+        [2, 'B'],
+    ]
+    assert transpose(data) == expected
+
+def test_peak_to_peak():
+    assert peak_to_peak([1, 8]) == 7
+    assert peak_to_peak([-1, -8]) == 7
+    assert peak_to_peak([9, -8]) == 17
+
+def test_rotate_left():
+    l = ['A', 'B', 'C']
+    rotate_left(l)
+    assert l ==  ['B', 'C', 'A']
+
+def test_rotate_right():
+    l = ['A', 'B', 'C']
+    rotate_right(l)
+    assert l == ['C', 'A', 'B']
+
+def test_rotate_left_empty():
+    l = []
+    rotate_left(l)
+    assert l == []
+
+def test_rotate_right_empty():
+    l = []
+    rotate_right(l)
+    assert l == []
+
+def main():
+    return pytest.main(__file__)
+
+if __name__ == '__main__':
+    main()
